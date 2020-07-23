@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class ProductForm extends Component {
   // You will need to keep this state in this component
@@ -40,17 +44,29 @@ class ProductForm extends Component {
   render() {
     return (
       <form onSubmit={this.addProduct}>
-        <input
-          onChange={this.handleNameChange}
-          type="text"
-          placeholder="name"
-        />
-        <input
-          onChange={this.handlePriceChange}
-          type="text"
-          placeholder="price"
-        />
-        <input type="submit" value="Submit" />
+        <Grid container spacing={2}>
+          <Grid item xs={2}>
+            <TextField
+              label="Name"
+              id="outlined-size-small"
+              variant="outlined"
+              size="small"
+              onChange={this.handleNameChange}
+              type="text"
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              label="Price"
+              id="outlined-size-small"
+              variant="outlined"
+              size="small"
+              onChange={this.handlePriceChange}
+              type="text"
+            />
+          </Grid>
+          <input type="submit" value="Submit" />
+        </Grid>
       </form>
     );
   }
