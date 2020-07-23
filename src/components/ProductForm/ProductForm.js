@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
+
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 
 class ProductForm extends Component {
   // You will need to keep this state in this component
